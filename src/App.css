@@ -68,6 +68,8 @@ nav {
   align-items: center;
   gap: 10px;
   text-align: center;
+  list-style-type: none;
+
 }
 
 .article-img {
@@ -83,6 +85,12 @@ nav {
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+}
+
+.article-info-container {
+  font-size: 0.5em;
+  list-style-type: none;
+
 }
 
 .close {
