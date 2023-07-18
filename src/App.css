@@ -4,6 +4,8 @@
   text-align: center;
 }
 
+
+
 .logo-text {
   margin-left: 4%;
 }
@@ -33,7 +35,6 @@
 .container {
   display: flex;
   justify-content: center;
-  margin-bottom: 150px;
 }
 
 nav {
@@ -72,6 +73,11 @@ nav {
 
 }
 
+body {
+  display: initial !important;
+}
+
+
 .article-img {
   width: 200px;
 }
@@ -91,6 +97,10 @@ nav {
   font-size: 0.5em;
   list-style-type: none;
 
+}
+
+.view-article-info {
+  margin-top: 20%;
 }
 
 .close {
