@@ -20,7 +20,6 @@ function PopularArticlesList() {
     <div className="container">
       <div className="article-list">
         {articles.map((article) => {
-          console.log(article);
           const {
             article_id,
             title,
@@ -30,7 +29,6 @@ function PopularArticlesList() {
             created_at,
           } = article;
           const publishedDate = created_at.substring(0, 10);
-          console.log(publishedDate);
           return (
             <Link to={`/articles/${article.article_id}`} key={article_id}>
               <ul key={article_id} className="article-container">
