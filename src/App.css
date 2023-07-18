@@ -1,42 +1,102 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.logo-text {
+  margin-left: 4%;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.filter-btn {
+  background-color: greenyellow;
+  border: solid 2px black;
+  font-size: 0.4em;
+  margin-left: 1em;
+}
+.search {
+  position: absolute;
+  top: 23%;
+  justify-content: center;
+  left: 81%;
+  background-color: pink;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.account {
+  position: absolute;
+  justify-content: center;
+  left: 90%;
+  top: 23%;
+  background-color: pink;
 }
 
-.card {
-  padding: 2em;
+.container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 150px;
 }
 
-.read-the-docs {
-  color: #888;
+nav {
+  display: flex;
+  position: absolute;
+  color: black;
+  gap: 2px;
+  background-color: pink;
+  width: 100%;
+}
+
+.homepage-header-container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  height: 190vh;
+  top: 80px;
+  
+}
+
+.heading-hp {
+  display: flex;
+  position: absolute;
+  left: 3.65em;
+  white-space: nowrap;
+  justify-content: center;
+}
+
+.article-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  list-style-type: none;
+
+}
+
+.article-img {
+  width: 200px;
+}
+
+.article-title {
+  width: 200px;
+}
+
+.article-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.article-info-container {
+  font-size: 0.5em;
+  list-style-type: none;
+
+}
+
+.close {
+  display: none;
+}
+.open {
+  display: flex;
+  
 }
