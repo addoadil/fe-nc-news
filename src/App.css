@@ -96,8 +96,21 @@ body {
 .article-info-container {
   font-size: 0.5em;
   list-style-type: none;
-
 }
+
+.comments-container {
+  border: solid 2px black;
+}
+
+.comments-container ul {
+  list-style: none;
+  margin: 30px;
+}
+
+.comments-container ul li{
+  margin: 10px;
+}
+
 
 .view-article-info {
   margin-top: 20%;
