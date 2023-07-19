@@ -4,10 +4,13 @@
   text-align: center;
 }
 
-
+body {
+  color: #F4F5F6;
+}
 
 .logo-text {
   margin-left: 4%;
+  color: white;
 }
 
 .filter-btn {
@@ -21,7 +24,7 @@
   top: 23%;
   justify-content: center;
   left: 81%;
-  background-color: pink;
+  background-color: #0D274D;
 }
 
 .account {
@@ -29,7 +32,7 @@
   justify-content: center;
   left: 90%;
   top: 23%;
-  background-color: pink;
+  background-color: #0D274D;
 }
 
 .container {
@@ -42,7 +45,7 @@ nav {
   position: absolute;
   color: black;
   gap: 2px;
-  background-color: pink;
+  background-color: #0D274D;
   width: 100%;
 }
 
@@ -61,6 +64,7 @@ nav {
   left: 3.65em;
   white-space: nowrap;
   justify-content: center;
+  color: black;
 }
 
 .article-container {
@@ -77,6 +81,10 @@ body {
   display: initial !important;
 }
 
+.view-article-title {
+  color: black;
+}
+
 
 .article-img {
   width: 200px;
@@ -84,6 +92,7 @@ body {
 
 .article-title {
   width: 200px;
+  color: black;
 }
 
 .article-list {
@@ -91,16 +100,34 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+  margin-top: 15%;
+  color: black;
 }
 
 .article-info-container {
   font-size: 0.5em;
   list-style-type: none;
-
+  color: blck;
 }
+
+.comments-container {
+  border: solid 2px black;
+  color: black;
+}
+
+.comments-container ul {
+  list-style: none;
+  margin: 30px;
+}
+
+.comments-container ul li{
+  margin: 10px;
+}
+
 
 .view-article-info {
   margin-top: 20%;
+  color: black;
 }
 
 .close {
