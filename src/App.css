@@ -101,12 +101,13 @@ body {
   justify-content: center;
   gap: 10px;
   margin-top: 15%;
+  color: black;
 }
 
 .article-info-container {
   font-size: 0.5em;
   list-style-type: none;
-  color: black;
+  color: blck;
 }
 
 .comments-container {
@@ -126,6 +127,7 @@ body {
 
 .view-article-info {
   margin-top: 20%;
+  color: black;
 }
 
 .close {

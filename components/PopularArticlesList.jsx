@@ -37,6 +37,7 @@ function PopularArticlesList() {
                   alt={"Image of " + title}
                   className="article-img"
                 />
+                <li>{article_id}</li>
                 <li className="article-title">{title}</li>
                 <div className="article-info-container">
                   <li className="author">Author: {author}</li>

@@ -14,6 +14,7 @@ function ViewArticle() {
   useEffect(() => {
     articleApiCall(article_id)
       .then((article) => {
+        console.log(article);
         viewArticle(article.data);
         setIsLoading(false);
       })
