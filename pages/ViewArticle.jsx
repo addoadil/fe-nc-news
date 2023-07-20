@@ -16,20 +16,27 @@ function ViewArticle() {
   const handleClick = (article_id, addToVote) => {
     setNetworkError(false);
 
-    addVote(article_id, addToVote).then((response) => {
-      if (response === "Network Error") {
-        setNetworkError(true);
+    setVote((currentVote) => {
+      if (addToVote) {
+        if (currentVote === -1) return 0;
+        return 1;
       } else {
-        setVote((currentVote) => {
-          if (addToVote) {
-            if (currentVote === -1) return 0;
-            return 1;
-          } else {
-            if (currentVote === 1) return 0;
-            return -1;
-          }
-        });
+        if (currentVote === 1) return 0;
+        return -1;
       }
+    });
+
+    addVote(article_id, addToVote).catch(() => {
+      setVote((currentVote) => {
+        if (addToVote) {
+          if (currentVote === 1) return 0;
+          return -1;
+        } else {
+          if (currentVote === -1) return 0;
+          return 1;
+        }
+      });
+      setNetworkError(true);
     });
   };
 
