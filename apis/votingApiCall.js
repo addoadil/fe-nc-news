@@ -5,11 +5,14 @@ const addVote = (article_id, flag) => {
     if (!flag) {
         patchRequestBody = {inc_votes: -1}
     } 
-    
-    axios.patch(`https://news-application-f2jb.onrender.com/api/articles/${article_id}`, patchRequestBody)
+
+    return axios.patch(`https://news-application-f2jb.onrender.com/api/articles/${article_id}`, patchRequestBody)
         .then((response) => {
             return response.data;
         })
+        .catch((err) => {
+            return err.message;
+        });
 };
 
 export default addVote;

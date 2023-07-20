@@ -8,19 +8,27 @@ import addVote from "../apis/votingApiCall";
 function ViewArticle() {
   <Navbar></Navbar>;
   const [article, viewArticle] = useState({});
+  const [networkError, setNetworkError] = useState(false);
   const [vote, setVote] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const { article_id } = useParams();
 
-  const handleClick = (article_id, flag) => {
-    addVote(article_id, flag);
-    setVote((currentVote) => {
-      if (flag) {
-        if (currentVote === -1) return 0;
-        return 1;
+  const handleClick = (article_id, addToVote) => {
+    setNetworkError(false);
+
+    addVote(article_id, addToVote).then((response) => {
+      if (response === "Network Error") {
+        setNetworkError(true);
       } else {
-        if (currentVote === 1) return 0;
-        return -1;
+        setVote((currentVote) => {
+          if (addToVote) {
+            if (currentVote === -1) return 0;
+            return 1;
+          } else {
+            if (currentVote === 1) return 0;
+            return -1;
+          }
+        });
       }
     });
   };
@@ -59,13 +67,18 @@ function ViewArticle() {
             <h1 className="view-article-title">{article.title}</h1>
             <p>Author: {article.author}</p>
             <p>Votes: {article.votes + vote}</p>
+            {networkError && (
+              <p className="error-message">
+                Failed to vote. Please check your internet connection.
+              </p>
+            )}
             <button
               aria-label="upvote this article"
               className="vote-btn"
               onClick={() => {
                 handleClick(article_id, true);
               }}
-              disabled={vote === 1}
+              disabled={networkError || vote === 1}
             >
               Upvote
             </button>
@@ -75,7 +88,7 @@ function ViewArticle() {
               onClick={() => {
                 handleClick(article_id, false);
               }}
-              disabled={vote === -1}
+              disabled={networkError || vote === -1}
             >
               Downvote
             </button>
