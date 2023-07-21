@@ -10,8 +10,8 @@ function ViewArticleByTopic() {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    articleApiCallByTopic(topic).then((articles) => {
-      setArticles(articles);
+    articleApiCallByTopic(topic).then((articlesFromAPI) => {
+      setArticles(articlesFromAPI);
     });
   }, [topic]);
 
@@ -19,7 +19,7 @@ function ViewArticleByTopic() {
     <div>
       <HomepageHeader></HomepageHeader>
       <Navbar></Navbar>
-      <PopularArticlesList articles={articles} />
+      <PopularArticlesList articlesFromAPI={articles} />
     </div>
   );
 }
