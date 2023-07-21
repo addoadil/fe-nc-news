@@ -104,10 +104,21 @@ body {
   color: black;
 }
 
+.topic-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15%;
+  color: black;
+  flex-direction: row;
+}
+
 .article-info-container {
   font-size: 0.5em;
   list-style-type: none;
-  color: blck;
+  color: black;
 }
 
 .comments-container {
@@ -137,3 +148,4 @@ body {
   display: flex;
   
 }
+

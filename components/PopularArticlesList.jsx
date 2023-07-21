@@ -1,21 +1,6 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
 
-function PopularArticlesList() {
-  const [articles, setArticles] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("https://news-application-f2jb.onrender.com/api/articles")
-      .then((response) => {
-        setArticles(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
+function PopularArticlesList({ articles }) {
   return (
     <div className="container">
       <div className="article-list">
