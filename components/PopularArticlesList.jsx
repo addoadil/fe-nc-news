@@ -1,20 +1,25 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import allArticlesApiCall from "../apis/allArticlesApiCall";
 
-function PopularArticlesList() {
+function PopularArticlesList({ articlesFromAPI }) {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://news-application-f2jb.onrender.com/api/articles")
-      .then((response) => {
-        setArticles(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+    if (articlesFromAPI === undefined) {
+      allArticlesApiCall()
+        .then((response) => {
+          console.log(response);
+          setArticles(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      setArticles(articlesFromAPI);
+    }
+  }, [articlesFromAPI]);
 
   return (
     <div className="container">

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import TopicCards from "./TopicCards";
+import { Link } from "react-router-dom";
 
 function HomepageHeader() {
   const [open, setOpen] = useState("close");
@@ -15,10 +17,10 @@ function HomepageHeader() {
           Filter
         </button>
         <div className={open}>
-          <a href="#">Recent</a>
-          <a href="#">All articles</a>
-          <a href="#">Popular topics</a>
-          <a href="#">Most upvoted</a>
+          <Link to="/">Recent</Link>
+          <Link to="/">All articles</Link>
+          <Link to="/articles/topics">Topics</Link>
+          <Link to="/">Most upvoted</Link>
         </div>
       </h2>
     </div>
