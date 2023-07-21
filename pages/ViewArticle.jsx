@@ -103,7 +103,10 @@ function ViewArticle() {
             <p>Topic: {article.topic}</p>
             <p>{article.body}</p>
             <div>
-              <Comments article_id={article_id}></Comments>
+              <Comments
+                article_id={article_id}
+                username={article.author}
+              ></Comments>
             </div>
           </div>
         }
