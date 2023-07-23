@@ -10,7 +10,6 @@ function PopularArticlesList({ articlesFromAPI }) {
     if (articlesFromAPI === undefined) {
       allArticlesApiCall()
         .then((response) => {
-          console.log(response);
           setArticles(response);
         })
         .catch((error) => {
@@ -32,6 +31,7 @@ function PopularArticlesList({ articlesFromAPI }) {
             author,
             comment_count,
             created_at,
+            votes,
           } = article;
           const publishedDate = created_at.substring(0, 10);
           return (
@@ -49,6 +49,7 @@ function PopularArticlesList({ articlesFromAPI }) {
                   <li className="comment-count">
                     Total comments: {comment_count}
                   </li>
+                  <li className="vote-count">{votes}</li>
                 </div>
               </ul>
             </Link>

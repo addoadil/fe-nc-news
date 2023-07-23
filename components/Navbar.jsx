@@ -1,6 +1,6 @@
 function Navbar() {
     return (
-      <div className="container">ddd
+      <div className="container">
         <nav>
           <h2 className="logo-text">NC NEWS</h2>
           <button className="search">🔎</button>

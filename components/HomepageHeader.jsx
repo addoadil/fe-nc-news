@@ -17,10 +17,10 @@ function HomepageHeader() {
           Filter
         </button>
         <div className={open}>
-          <Link to="/">Recent</Link>
-          <Link to="/">All articles</Link>
+          <Link to="/articles">Date</Link>
+          <Link to="/articles/sort/comment_count">Comment count</Link>
           <Link to="/articles/topics">Topics</Link>
-          <Link to="/">Most upvoted</Link>
+          <Link to="/articles/sort/votes">Most upvoted</Link>
         </div>
       </h2>
     </div>
