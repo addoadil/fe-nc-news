@@ -33,7 +33,7 @@ function TopicCards() {
               const { slug, description } = topic;
               return (
                 <Link
-                  to={`/articles/sort/${slug}`}
+                  to={`/articles/filter/${slug}`}
                   className="topic-card"
                   key={slug}
                 >

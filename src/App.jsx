@@ -5,6 +5,7 @@ import Homepage from "../pages/Homepage";
 import ViewArticle from "../pages/ViewArticle";
 import TopicCards from "../components/TopicCards";
 import ViewArticleByTopic from "../pages/ViewArticleByTopic";
+import ViewArticleBySortby from "../pages/ViewArticleBySortby";
 
 function App() {
   return (
@@ -14,8 +15,12 @@ function App() {
         <Route path="/articles/:article_id" element={<ViewArticle />} />
         <Route path="/articles/topics" element={<TopicCards />} />
         <Route
-          path="/articles/sort/:topic"
+          path="/articles/filter/:topic"
           element={<ViewArticleByTopic></ViewArticleByTopic>}
+        ></Route>
+        <Route
+          path="/articles/sort/:sort_by"
+          element={<ViewArticleBySortby />}
         ></Route>
       </Routes>
     </>

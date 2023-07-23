@@ -35,10 +35,7 @@ body {
   background-color: #0D274D;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-}
+
 
 nav {
   display: flex;
@@ -46,6 +43,13 @@ nav {
   color: black;
   gap: 2px;
   background-color: #0D274D;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  color: black;
   width: 100%;
 }
 
@@ -149,3 +153,10 @@ body {
   
 }
 
+.closeSort {
+  display: none;
+}
+.openSort {
+  display: flex;
+  
+}
