@@ -2,10 +2,12 @@
   max-width: 1280px;
   margin: 0 auto;
   text-align: center;
+
 }
 
 body {
-  color: #F4F5F6;
+  display: initial !important;
+  
 }
 
 .logo-text {
@@ -19,30 +21,75 @@ body {
   font-size: 0.4em;
   margin-left: 1em;
 }
-.search {
-  position: absolute;
-  top: 23%;
+
+.icons-container {
+  display: flex;
   justify-content: center;
-  left: 81%;
-  background-color: #0D274D;
+  position: absolute;
+  top: 47%;
+  left: 85%;
+  gap: 12%;
+  
+}
+
+.search {
+  margin-left: 50%;
+  width: 25%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+}
+
+.search-icon {
+  width: 40%;
+  margin-left: 96%;
+  cursor: pointer;
+}
+
+.account-icon {
+  width: 40%;
+  cursor: pointer;
 }
 
 .account {
-  position: absolute;
-  justify-content: center;
-  left: 90%;
-  top: 23%;
-  background-color: #0D274D;
+  width: 22%;
+  margin: 0%;
+  padding: 0%;
+  margin-left: 50%;
+  width: 25%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
 }
 
+.menu-item-1 {
+  margin-left: 30%;
+}
 
+.menu-item-1, .menu-item-2, .menu-item-3 {
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-right: 3%;
+  margin-top: 1.8%;
+  cursor: pointer;
+  font-weight: 600;
+}
+.menu-item-1:hover, .menu-item-2:hover, .menu-item-3:hover {
+  text-decoration: none;
+  box-shadow: inset 0 -3px 0 0 white;}
+
+  img {
+    border-radius: 8%;
+  }
 
 nav {
   display: flex;
   position: absolute;
-  color: black;
   gap: 2px;
-  background-color: #0D274D;
+  background-color: black;
   width: 100%;
 }
 
@@ -51,7 +98,9 @@ nav {
   justify-content: center;
   color: black;
   width: 100%;
+  background-color: #FEFDE8;
 }
+
 
 .homepage-header-container {
   display: flex;
@@ -81,9 +130,6 @@ nav {
 
 }
 
-body {
-  display: initial !important;
-}
 
 .view-article-title {
   color: black;
