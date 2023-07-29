@@ -64,7 +64,7 @@ function ViewArticle() {
       </div>
     );
   } else {
-    const publishedDate = article.created_at;
+    const publishedDate = article.created_at.substring(0, 10);
 
     return (
       <div>
@@ -86,7 +86,10 @@ function ViewArticle() {
                 }}
                 disabled={networkError || vote === 1}
               >
-                <img src="/icons/thumb-up-icon.png" className="thumbs-up-icon" />
+                <img
+                  src="/icons/thumb-up-icon.png"
+                  className="thumbs-up-icon"
+                />
               </button>
               <button
                 aria-label="downvote this article"
@@ -105,8 +108,6 @@ function ViewArticle() {
         </div>
       </div>
     );
-    
-    
   }
 }
 

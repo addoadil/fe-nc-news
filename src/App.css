@@ -440,6 +440,31 @@ nav {
   .search-icon, .account-icon {
     display: none; 
   }
+
+  .view-article-title {
+    margin-top: 20%;
+  }
+
+  #new-comment {
+  width: 70%;
+  }
+
+  .submit-comment {
+    width: 40%;
+  }
+
+  .dropdown {
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+    left: 90%;
+    transform: translateX(-50%);
+    top: 2em;
+    z-index: 1;
+  }
+
   
 }
 
