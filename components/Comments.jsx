@@ -47,9 +47,8 @@ function Comments({ article_id, username }) {
             <div key={comment_id}>
               <div className="comments-container">
                 <ul>
-                  <li>{"Comment by " + author}</li>
                   <li>{"Posted on " + commentDate}</li>
-                  <li>{body}</li>
+                  <li>{author + " commented:" + " " + body}</li>
                   <li>{"Total votes: " + votes}</li>
                 </ul>
                 {deleteComment === comment_id && <p>Deleting comment...</p>}

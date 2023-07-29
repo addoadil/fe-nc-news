@@ -1,25 +1,56 @@
+import React, { useState, useEffect } from 'react';
+
 function Navbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(window.innerWidth > 600);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 600) {
+        setMobileMenuOpen(true);
+      } else {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className="container">
       <nav>
         <h2 className="logo-text">NC NEWS</h2>
-        <h4 className="menu-item-1">Articles</h4>
-        <h4 className="menu-item-2">About Us</h4>
-        <h4 className="menu-item-3">Contact</h4>
+        <div className={`hamburger-menu ${mobileMenuOpen ? 'open' : 'close'}`}>
+        </div>
+
+        <div className={`menu-items ${mobileMenuOpen ? 'open' : 'close'}`}>
+          <h4 className="menu-item-1">Articles</h4>
+          <h4 className="menu-item-2">About Us</h4>
+          <h4 className="menu-item-3">Contact</h4>
+          <h4 className='menu-item-4'>Account</h4>
+          <h4 className='menu-item-5'>Search</h4>
+        </div>
+
         <div className="icons-container">
-          <button className="search">
+        <img 
+            className="hamburger-icon" 
+            src="/icons/Hamburger_icon.svg.png" 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
+          />
+          <button className={`search icon ${mobileMenuOpen ? 'show' : 'hide'}`}>
             <img
-              src="icons/search-icon.png"
+              src="/icons/search-icon.png"
               alt="search-icon"
               className="search-icon"
-            ></img>
+            />
           </button>
-          <button className="account">
+          <button className={`account icon ${mobileMenuOpen ? 'show' : 'hide'}`}>
             <img
               src="/icons/account-white-icon.png"
               className="account-icon"
               alt="account-icon"
-            ></img>
+            />
           </button>
         </div>
       </nav>

@@ -32,8 +32,9 @@ function CommentAdder({ article_id, username, setComments }) {
 
   return (
     <form className="commentAdder" onSubmit={handleSubmit}>
-      <label htmlFor="new-comment">Got an opinion? Post a comment!</label>
+      <label htmlFor="new-comment"></label>
       <textarea
+        placeholder="Got an opinion? Post a comment!"
         id="new-comment"
         value={newComment}
         onChange={(event) => {

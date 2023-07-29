@@ -68,50 +68,45 @@ function ViewArticle() {
 
     return (
       <div>
-        <Navbar></Navbar>
-        {
-          <div className="view-article-info">
-            <h1 className="view-article-title">{article.title}</h1>
+        <Navbar />
+        <div className="view-article-info">
+          <h1 className="view-article-title">{article.title}</h1>
+          <div className="author-and-date">
             <p>Author: {article.author}</p>
-            <p>Votes: {article.votes + vote}</p>
-            {networkError && (
-              <p className="error-message">
-                Failed to vote. Please check your internet connection.
-              </p>
-            )}
-            <button
-              aria-label="upvote this article"
-              className="vote-btn"
-              onClick={() => {
-                handleClick(article_id, true);
-              }}
-              disabled={networkError || vote === 1}
-            >
-              Upvote
-            </button>
-            <button
-              aria-label="downvote this article"
-              className="vote-btn"
-              onClick={() => {
-                handleClick(article_id, false);
-              }}
-              disabled={networkError || vote === -1}
-            >
-              Downvote
-            </button>
             <p>Published: {publishedDate}</p>
-            <p>Topic: {article.topic}</p>
-            <p>{article.body}</p>
-            <div>
-              <Comments
-                article_id={article_id}
-                username={article.author}
-              ></Comments>
+          </div>
+          <div className="vote-section">
+            <p>Votes: {article.votes + vote}</p>
+            <div className="vote-container">
+              <button
+                aria-label="upvote this article"
+                className="vote-btn"
+                onClick={() => {
+                  handleClick(article_id, true);
+                }}
+                disabled={networkError || vote === 1}
+              >
+                <img src="/icons/thumb-up-icon.png" className="thumbs-up-icon" />
+              </button>
+              <button
+                aria-label="downvote this article"
+                className="vote-btn"
+                onClick={() => {
+                  handleClick(article_id, false);
+                }}
+                disabled={networkError || vote === -1}
+              >
+                <img src="/icons/thumbs-down.png" className="thumb-down-icon" />
+              </button>
             </div>
           </div>
-        }
+          <p className="article-body">{article.body}</p>
+          <Comments article_id={article_id} username={article.author} />
+        </div>
       </div>
     );
+    
+    
   }
 }
 

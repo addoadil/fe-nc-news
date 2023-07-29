@@ -43,14 +43,15 @@ function PopularArticlesList({ articlesFromAPI }) {
                   className="article-img"
                 />
                 <li className="article-title">{title}</li>
-                <div className="article-info-container">
-                  <li className="author">Author: {author}</li>
-                  <li className="created-at">Published: {publishedDate}</li>
-                  <li className="comment-count">
-                    Total comments: {comment_count}
-                  </li>
-                  <li className="vote-count">{votes}</li>
-                </div>
+                <li className="information-source">
+                  <span className="info-icon">&#x2139;</span>
+                  <div className="article-info-container">
+                    <li className="author">Author: {author}</li>
+                    <li className="created-at">Published: {publishedDate}</li>
+                    <li className="comment-count"> Total comments: {comment_count}</li>
+                    <li className="vote-count">Votes: {votes}</li>
+                  </div>
+                </li>
               </ul>
             </Link>
           );

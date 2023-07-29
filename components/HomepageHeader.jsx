@@ -1,26 +1,31 @@
 import { useState } from "react";
-import TopicCards from "./TopicCards";
 import { Link } from "react-router-dom";
 
 function HomepageHeader() {
-  const [open, setOpen] = useState("close");
+  const [open, setOpen] = useState(false);
+  const [filter, setFilter] = useState('All articles');
 
   const handleClick = () => {
-    return setOpen(open === "open" ? "close" : "open");
+    setOpen(!open);
+  };
+
+  const handleFilterChange = (newFilter) => {
+    setFilter(newFilter);
+    setOpen(false);
   };
 
   return (
     <div className="homepage-header-container">
       <h2 className="heading-hp">
-        All articles
+        {filter}
         <button onClick={handleClick} className="filter-btn">
           Filter
         </button>
-        <div className={open}>
-          <Link to="/articles">Date</Link>
-          <Link to="/articles/sort/comment_count">Comment count</Link>
-          <Link to="/articles/topics">Topics</Link>
-          <Link to="/articles/sort/votes">Most upvoted</Link>
+        <div className={open ? "dropdown open" : "dropdown close"}>
+          <Link onClick={() => handleFilterChange('Date')} to="/articles/sort/created_at">Date</Link>
+          <Link onClick={() => handleFilterChange('Comment count')} to="/articles/sort/comment_count">Comment count</Link>
+          <Link onClick={() => handleFilterChange('Topics')} to="/articles/topics">Topics</Link>
+          <Link onClick={() => handleFilterChange('Most upvoted')} to="/articles/sort/votes">Most upvoted</Link>
         </div>
       </h2>
     </div>

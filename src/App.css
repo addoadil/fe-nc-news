@@ -1,18 +1,71 @@
+@media (min-width: 601px) {
+  .hamburger-menu {
+    display: none;
+  }
+}
+
+
 #root {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
-
+  background-color: black;
 }
 
 body {
   display: initial !important;
-  
+  background-color: black;
+  color: white;
 }
 
 .logo-text {
   margin-left: 4%;
   color: white;
+}
+
+.commentAdder textarea,
+.commentAdder button {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.hamburger-icon {
+  display: none;
+}
+
+.search.icon, .account.icon {
+  display: block;
+}
+
+.menu-item-4, .menu-item-5 {
+  display: none; 
+}
+
+.commentAdder textarea {
+  margin-top: 10%;
+}
+
+.commentAdder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.commentAdder ::placeholder {
+  color: black;
+  line-height: 40px;
+}
+
+#new-comment {
+  width: 50%;
+  height: 40px;
+  border-radius: 40px;
+}
+
+.submit-comment {
+  width: 15%;
 }
 
 .filter-btn {
@@ -29,7 +82,6 @@ body {
   top: 47%;
   left: 85%;
   gap: 12%;
-  
 }
 
 .search {
@@ -64,26 +116,53 @@ body {
   background: none;
 }
 
+.vote-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thumb-down-icon, .thumbs-up-icon {
+  width: 60%;
+  background-color: white;
+  border-radius: 30px;
+  margin: 0 10px;
+}
+
+.vote-btn {
+  width: 50%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+}
+
 .menu-item-1 {
   margin-left: 30%;
 }
 
-.menu-item-1, .menu-item-2, .menu-item-3 {
+.menu-items.open {
   display: flex;
+  position: absolute;
+  white-space: nowrap;
+  left: 45%;
+  bottom: 3%;
+  gap: 20%;
   justify-content: center;
   color: white;
-  margin-right: 3%;
   margin-top: 1.8%;
   cursor: pointer;
   font-weight: 600;
 }
+
 .menu-item-1:hover, .menu-item-2:hover, .menu-item-3:hover {
   text-decoration: none;
-  box-shadow: inset 0 -3px 0 0 white;}
+  box-shadow: inset 0 -3px 0 0 white;
+}
 
-  img {
-    border-radius: 8%;
-  }
+img {
+  border-radius: 8%;
+}
 
 nav {
   display: flex;
@@ -91,6 +170,7 @@ nav {
   gap: 2px;
   background-color: black;
   width: 100%;
+  border-bottom: solid 1px rgb(61, 61, 61);
 }
 
 .container {
@@ -98,9 +178,9 @@ nav {
   justify-content: center;
   color: black;
   width: 100%;
-  background-color: #FEFDE8;
+  height: 100%;
+  margin-bottom: 6%;
 }
-
 
 .homepage-header-container {
   display: flex;
@@ -108,16 +188,32 @@ nav {
   position: absolute;
   height: 190vh;
   top: 80px;
-  
+}
+
+.information-source:hover .article-info-container {
+  display: block;
+}
+
+.information-source {
+  position: relative;
+  display: inline-block;
 }
 
 .heading-hp {
   display: flex;
   position: absolute;
-  left: 3.65em;
+  left: 6.75em;
   white-space: nowrap;
   justify-content: center;
-  color: black;
+  color: white;
+}
+
+.information-source {
+  border: solid;
+  border-width: 1px;
+  border-radius: 15px;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .article-container {
@@ -127,14 +223,59 @@ nav {
   gap: 10px;
   text-align: center;
   list-style-type: none;
-
+  color: white;
 }
 
+.view-article-info {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  margin: 0 auto;
+}
 
 .view-article-title {
-  color: black;
+  font-size: 2em;
+  color: greenyellow;
+  margin-bottom: 1em;
 }
 
+.author-and-date {
+  font-size: 0.8em;
+  color: grey;
+  margin-bottom: 2em;
+}
+
+.vote-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.article-body {
+  white-space: pre-wrap;
+}
+
+.comments-container {
+  background-color: rgb(51, 51, 51);
+  border-radius: 30px;
+  color: white;
+  margin-top: 3em;
+}
+
+.comments-container ul {
+  list-style: none;
+  margin: 30px;
+}
+
+.comments-container ul li {
+  margin: 10px;
+  background-color: #333;
+  border-radius: 8px;
+  padding: 10px;
+}
 
 .article-img {
   width: 200px;
@@ -142,7 +283,7 @@ nav {
 
 .article-title {
   width: 200px;
-  color: black;
+  color: white;
 }
 
 .article-list {
@@ -150,8 +291,9 @@ nav {
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  margin-top: 15%;
+  margin-top: 8%;
   color: black;
+  width: 100%;
 }
 
 .topic-list {
@@ -166,43 +308,142 @@ nav {
 }
 
 .article-info-container {
-  font-size: 0.5em;
-  list-style-type: none;
+  display: none;
+  background-color: #f1f1f1;
+  color: #000;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.5rem;
+}
+
+.dropdown {
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  width: 400px;
+  left: 90%;
+  transform: translateX(-50%);
+  top: 2em;
+  z-index: 1;
+}
+
+.dropdown a {
   color: black;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 5px;
 }
 
-.comments-container {
-  border: solid 2px black;
-  color: black;
-}
-
-.comments-container ul {
-  list-style: none;
-  margin: 30px;
-}
-
-.comments-container ul li{
-  margin: 10px;
-}
-
-
-.view-article-info {
-  margin-top: 20%;
-  color: black;
+.dropdown a:hover {
+  color: gray;
 }
 
 .close {
   display: none;
 }
+
 .open {
-  display: flex;
-  
+  display: block;
 }
 
 .closeSort {
   display: none;
 }
+
 .openSort {
   display: flex;
+}
+@media only screen and (max-width: 600px) {
+
+  .article-list {
+    margin-top: 24%;
+  }
+
+  .heading-hp {
+    position: absolute;
+    right: 3%;
+  }
+
+  .hamburger-menu.close {
+    display: none;
+  }
+
+  .hamburger-menu.open {
+    display: block;
+  }
+
+  .menu-items.close {
+    display: none;
+  }
+
+  .menu-items.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 76%;
+    background: #000;
+    width: 22%;
+    height: 400%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    top: 85%;
+  }
+
+  .menu-item-1, .menu-item-2, .menu-item-3, .menu-item-4, .menu-item-5 {
+    cursor: pointer;
+  color: black;
+  }
+ .menu-items.open .menu-item-4, .menu-items.open .menu-item-5 {
+    display: block;
+  }
+
+  .hamburger-icon {
+    width: 40%;
+  }
+
+  .icon.hide {
+    display: none;
+  }
+  
+  .icon.show {
+    display: block;
+  }
+
+  .menu-items {
+    transition: background-color 0.3s ease;
+  }
+  
+  .menu-items.open {
+    background-color: white;
+  }
+
+  .hamburger-icon {
+    display: block;
+  }
+
+  .search.icon.hide, .account.icon.hide {
+    display: none;
+  }
+
+  .search.icon.show, .account.icon.show {
+    display: block;
+  }
+
+  .search-icon, .account-icon {
+    display: none; 
+  }
   
 }
+
+
+
+
+
