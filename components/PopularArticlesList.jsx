@@ -5,20 +5,27 @@ import allArticlesApiCall from "../apis/allArticlesApiCall";
 
 function PopularArticlesList({ articlesFromAPI }) {
   const [articles, setArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (articlesFromAPI === undefined) {
       allArticlesApiCall()
         .then((response) => {
           setArticles(response);
+          setIsLoading(false);
         })
         .catch((error) => {
           console.log(error);
         });
     } else {
       setArticles(articlesFromAPI);
+      setIsLoading(false);
     }
   }, [articlesFromAPI]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="container">
@@ -48,7 +55,10 @@ function PopularArticlesList({ articlesFromAPI }) {
                   <div className="article-info-container">
                     <li className="author">Author: {author}</li>
                     <li className="created-at">Published: {publishedDate}</li>
-                    <li className="comment-count"> Total comments: {comment_count}</li>
+                    <li className="comment-count">
+                      {" "}
+                      Total comments: {comment_count}
+                    </li>
                     <li className="vote-count">Votes: {votes}</li>
                   </div>
                 </li>
