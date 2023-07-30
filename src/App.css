@@ -4,6 +4,48 @@
   }
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.topics-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  height: 100vh;
+}
+
+.topic-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+
+.topic-card:hover {
+  background-color: white;
+  color: black;
+}
+
+.topic-title {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.topic-description {
+  font-size: 0.9em;
+  text-align: center;
+}
+
 
 #root {
   width: 100%;
@@ -15,7 +57,6 @@
 body {
   display: initial !important;
   background-color: black;
-  color: white;
 }
 
 .logo-text {
