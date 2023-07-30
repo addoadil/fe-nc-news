@@ -508,6 +508,10 @@ nav {
     z-index: 1;
   }
 
+  nav {
+    margin-top: 13%;
+  }
+
   
 }
 
