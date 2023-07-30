@@ -4,6 +4,8 @@ import Navbar from "../components/Navbar";
 import articleApiCall from "../apis/articleApiCall";
 import Comments from "../components/Comments";
 import addVote from "../apis/votingApiCall";
+import thumbsUp from '/icons/thumb-up-icon.png'
+import thumbDn from '/icons/thumbs-down.png'
 
 function ViewArticle() {
   <Navbar></Navbar>;
@@ -87,7 +89,7 @@ function ViewArticle() {
                 disabled={networkError || vote === 1}
               >
                 <img
-                  src="/icons/thumb-up-icon.png"
+                  src={thumbsUp}
                   className="thumbs-up-icon"
                 />
               </button>
@@ -99,7 +101,7 @@ function ViewArticle() {
                 }}
                 disabled={networkError || vote === -1}
               >
-                <img src="/icons/thumbs-down.png" className="thumb-down-icon" />
+                <img src={thumbDn} className="thumb-down-icon" />
               </button>
             </div>
           </div>

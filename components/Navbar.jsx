@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import hamburgerIcon from '/icons/Hamburger_icon.svg.png'
+import searchIcon from '/icons/search-icon.png'
+import accountIcon from '/icons/account-white-icon.png'
+
+
 
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(window.innerWidth > 600);
@@ -33,21 +38,21 @@ function Navbar() {
         </div>
 
         <div className="icons-container">
-        <img 
-            className="hamburger-icon" 
-            src="/icons/Hamburger_icon.svg.png" 
+          <img
+            className="hamburger-icon"
+            src={hamburgerIcon } 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
           />
           <button className={`search icon ${mobileMenuOpen ? 'show' : 'hide'}`}>
             <img
-              src="/icons/search-icon.png"
+              src={searchIcon}
               alt="search-icon"
               className="search-icon"
             />
           </button>
           <button className={`account icon ${mobileMenuOpen ? 'show' : 'hide'}`}>
             <img
-              src="/icons/account-white-icon.png"
+              src={accountIcon}
               className="account-icon"
               alt="account-icon"
             />
