@@ -24,7 +24,7 @@ function PopularArticlesList({ articlesFromAPI }) {
   }, [articlesFromAPI]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className="loading-message">Loading...</div>;
   }
 
   return (

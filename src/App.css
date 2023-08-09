@@ -488,6 +488,10 @@ nav {
     margin-top: 20%;
   }
 
+  .loading-message {
+    color: white;
+  }
+
   #new-comment {
   width: 80%;
   }
